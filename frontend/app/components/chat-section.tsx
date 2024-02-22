@@ -19,6 +19,10 @@ export default function ChatSection() {
     api: "https://my-app-2-flax.vercel.app/api/chat",
     headers: {
       "Content-Type": "application/json", // using JSON because of vercel/ai 2.2.26
+      "Access-Control-Allow-Credentials": "true",
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET,OPTIONS,PATCH,DELETE,POST,PUT",
+      "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
     },
   });
 
