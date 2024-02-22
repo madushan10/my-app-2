@@ -9,7 +9,7 @@ const port = parseInt(process.env.PORT || "8000");
 
 const env = process.env["NODE_ENV"];
 const isDevelopment = !env || env === "development";
-const prodCorsOrigin = process.env["PROD_CORS_ORIGIN"];
+const prodCorsOrigin = "https://llama-frontend-rho.vercel.app";
 
 app.use(express.json());
 
@@ -36,7 +36,7 @@ app.get("/", (req: Request, res: Response) => {
 
 app.use("/api/chat", chatRouter);
 app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'https://llama-frontend-rho.vercel.app');
+  res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   res.setHeader('Access-Control-Allow-Credentials', 'true');
