@@ -9,7 +9,7 @@ const port = parseInt(process.env.PORT || "8000");
 
 const env = process.env["NODE_ENV"];
 const isDevelopment = !env || env === "development";
-const prodCorsOrigin = "https://llama-frontend-rho.vercel.app";
+const prodCorsOrigin = "*";
 
 app.use(express.json());
 
